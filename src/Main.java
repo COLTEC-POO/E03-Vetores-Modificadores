@@ -69,5 +69,11 @@ public class Main {
         System.out.println("Novo Saldo "+samuel.dono.nome+":"+samuel.saldo);
         System.out.println("Novo Saldo "+camila.dono.nome+":"+camila.saldo);
 
+        //imprimindo o Extrato das contas Samuel e Camila
+
+        samuel.extrato(samuel);
+        camila.extrato(camila);
+
+
     }
 }

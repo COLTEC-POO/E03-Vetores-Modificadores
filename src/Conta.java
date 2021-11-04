@@ -57,4 +57,16 @@ public class Conta {
 
     }
 
+    //metodo - extrato
+    public void extrato(Conta conta){
+        System.out.println("Extrato: "+conta.dono.nome);
+        for(int i=0;i< operacoes.length;i++){
+            if(operacoes[i].tipo =='n') continue;//verifica se a operação está com o valor padrão de criação ou se foi modificada
+            else{
+                System.out.println(operacoes[i].data+" "+operacoes[i].tipo+" "+operacoes[i].valor);
+            }
+        }
+    }
+
+
 }

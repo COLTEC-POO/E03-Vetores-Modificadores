@@ -10,6 +10,9 @@ public class Conta {
 
     public int numeroOp=0;
 
+    //numero de contas criadas durante a execução do sistema
+    public static int totalContas=0;
+
     //metodos da classe conta:
     //construtor:
 
@@ -19,6 +22,7 @@ public class Conta {
         this.numero=-1;
         this.saldo=0;
         this.limite=0;
+        Conta.totalContas++;
     }
 
 

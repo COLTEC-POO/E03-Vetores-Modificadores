@@ -20,6 +20,9 @@ public class Operacao {
     /* Valor da operação */
     private double valor;
 
+    //total de operações feitas durante a execução do sistema
+    public static int totalOperacoes=0;
+
     /**
      * Construtor. Inicializa uma nova instância da classe Operacao onde a data da operação é exatamente a data
      * da criação da classe.
@@ -36,6 +39,7 @@ public class Operacao {
         this.tipo = tipo;
         this.valor = valor;
         data = new Date();
+        Operacao.totalOperacoes++;
     }
 
     //metodos getters e setters:
@@ -62,9 +66,6 @@ public class Operacao {
 
     public void setValor(double valor){
         this.valor=valor;
-
-
-
     }
 
 }

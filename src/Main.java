@@ -57,6 +57,12 @@ public class Main {
         samuel.extrato(samuel);
         camila.extrato(camila);
 
+        System.out.println("Total de contas:"+Conta.totalContas);
 
+        System.out.println("Total de operações:"+Operacao.totalOperacoes);
+
+        float media=Operacao.totalOperacoes/Conta.totalContas;
+
+        System.out.println("Média de operações:"+media);
     }
 }

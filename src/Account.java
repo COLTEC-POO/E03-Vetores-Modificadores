@@ -5,7 +5,8 @@ public class Account {
     private double total;
     private double limit;
     private Client owner;
-    private Operacao[] operations;
+    private Operacao[] operations = new Operacao[10000];
+    private int currentOperation = 0;
 
     public Account(Client owner, double total, double limit, int id) {
         this.total = total;
@@ -23,9 +24,8 @@ public class Account {
             return false;
         }
 
-        if (operations.length <= 10000) {
-            operations[operations.length] = new Operacao('D', amount);
-        }
+        this.operations[currentOperation] = new Operacao('D', amount);
+        ++this.currentOperation;
 
         total -= amount;
         return true;
@@ -36,9 +36,8 @@ public class Account {
             return false;
         }
 
-        if (operations.length <= 10000) {
-            operations[operations.length] = new Operacao('C', amount);
-        }
+        this.operations[this.currentOperation] = new Operacao('C', amount);
+        ++this.currentOperation;
 
         this.total += amount;
         return true;
@@ -64,5 +63,18 @@ public class Account {
 
     public void printOwner() {
         System.out.println("Owner: " + this.owner.getName());
+    }
+
+    public void printOperations() {
+        System.out.println("Operations:");
+
+        for (int i = 0; i < operations.length; i++) {
+            if (operations[i] == null) {
+                break;
+            }
+
+            System.out
+                    .println(operations[i].getData() + " " + operations[i].getTipo() + " " + operations[i].getValor());
+        }
     }
 }

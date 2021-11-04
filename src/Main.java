@@ -29,6 +29,8 @@ public class Main {
         } else {
             System.out.println("Diferentes");
         }
+
+        account1.printOperations();
     }
 
 }

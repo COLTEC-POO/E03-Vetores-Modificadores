@@ -47,4 +47,16 @@ public class Operacao {
         data = date;
     }
 
+    public Date getData() {
+        return data;
+    }
+
+    public char getTipo() {
+        return tipo;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
 }

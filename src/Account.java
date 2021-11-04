@@ -15,10 +15,6 @@ public class Account {
         this.owner = owner;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public boolean withdraw(double amount) {
         if (amount > total || amount <= 0) {
             return false;
@@ -77,4 +73,33 @@ public class Account {
                     operations[i].getData() + "\t" + operations[i].getTipo() + "\t" + operations[i].getValor());
         }
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Client getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Client owner) {
+        this.owner = owner;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public double getLimit() {
+        return limit;
+    }
+
+    public void setLimit(double limit) {
+        this.limit = limit;
+    }
+
 }

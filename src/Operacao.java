@@ -55,8 +55,16 @@ public class Operacao {
         return tipo;
     }
 
+    public void setTipo(char tipo) {
+        this.tipo = tipo;
+    }
+
     public double getValor() {
         return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
 }

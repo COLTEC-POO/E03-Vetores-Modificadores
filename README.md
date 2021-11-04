@@ -11,7 +11,7 @@ Para isso, lhe foi fornecida uma nova classe já implementada (consulte o arquiv
 
 * `operacao`: tipo caractere, possuindo apenas dois possíveis valores 'd' para depósito, e 's' para saques;
 * `valor`: tipo double, contendo o valor da operação;
-* `dataOperacao`: Tipo DateTime, contendo a data e hora da realização da operação;
+* `dataOperacao`: Tipo D ateTime, contendo a data e hora da realização da operação;
 
 Para que a funcionalidade de registro de operações funcione corretamente, você deverá atualizar a classe `Conta` da seguinte forma:
 

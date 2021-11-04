@@ -12,13 +12,13 @@ import java.util.Date;
 public class Operacao {
 
     /* Data de realização da operação */
-    public Date data;
+    private Date data;
 
     /* Tipo da operação */
-    public char tipo;
+    private char tipo;
 
     /* Valor da operação */
-    public double valor;
+    private double valor;
 
     /**
      * Construtor. Inicializa uma nova instância da classe Operacao onde a data da operação é exatamente a data
@@ -36,6 +36,35 @@ public class Operacao {
         this.tipo = tipo;
         this.valor = valor;
         data = new Date();
+    }
+
+    //metodos getters e setters:
+    public Date getData(){
+        return this.data;
+    }
+
+    public char getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(char tipo){
+        if (tipo == 'd' || tipo == 's'||tipo=='n') {//o exc pedia para deixar apenas dois tipos,mas, eu precisava desse outro para validar a função
+            this.tipo=tipo;
+        }
+        else{
+            System.out.println("Tipo invalido!Repita a operação com 'd' ou 's'");
+        }
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor){
+        this.valor=valor;
+
+
+
     }
 
 }

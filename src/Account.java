@@ -5,6 +5,7 @@ public class Account {
     private double total;
     private double limit;
     private Client owner;
+    private Operacao[] operations;
 
     public Account(Client owner, double total, double limit, int id) {
         this.total = total;
@@ -21,6 +22,11 @@ public class Account {
         if (amount > total || amount <= 0) {
             return false;
         }
+
+        if (operations.length <= 10000) {
+            operations[operations.length] = new Operacao('D', amount);
+        }
+
         total -= amount;
         return true;
     }
@@ -28,6 +34,10 @@ public class Account {
     public boolean deposit(double amount) {
         if (amount <= 0) {
             return false;
+        }
+
+        if (operations.length <= 10000) {
+            operations[operations.length] = new Operacao('C', amount);
         }
 
         this.total += amount;

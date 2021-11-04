@@ -73,8 +73,8 @@ public class Account {
                 break;
             }
 
-            System.out
-                    .println(operations[i].getData() + " " + operations[i].getTipo() + " " + operations[i].getValor());
+            System.out.println(
+                    operations[i].getData() + "\t" + operations[i].getTipo() + "\t" + operations[i].getValor());
         }
     }
 }

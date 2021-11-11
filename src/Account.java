@@ -7,12 +7,14 @@ public class Account {
     private Client owner;
     private Operacao[] operations = new Operacao[10000];
     private int currentOperation = 0;
+    private static int count = 0;
 
     public Account(Client owner, double total, double limit, int id) {
         this.total = total;
         this.limit = limit;
         this.id = id;
         this.owner = owner;
+        Account.count++;
     }
 
     public boolean withdraw(double amount) {
@@ -100,6 +102,10 @@ public class Account {
 
     public void setLimit(double limit) {
         this.limit = limit;
+    }
+
+    public int getTotalAccounts() {
+        return Account.count;
     }
 
 }

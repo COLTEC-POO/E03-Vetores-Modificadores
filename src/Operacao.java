@@ -1,24 +1,24 @@
-/**
- * Operacao.java
- *
- * @author João Eduardo Montandon
- */
+/*** Operacao.java
+* @author João Eduardo Montandon
+*/
 
 import java.util.Date;
 
-/**
- * Classe responsável por registrar operações de saque e depósitos realizados em contas correntes.
- */
+
+/**Classe responsável por registrar operações de saque e depósitos realizados em contas correntes.*/
+
 public class Operacao {
 
     /* Data de realização da operação */
-    public Date data;
+    private Date data;
 
     /* Tipo da operação */
-    public char tipo;
+    private char tipo;
 
     /* Valor da operação */
-    public double valor;
+    private double valor;
+
+    public static int TOTAL_OPERACOES = 0;
 
     /**
      * Construtor. Inicializa uma nova instância da classe Operacao onde a data da operação é exatamente a data
@@ -36,6 +36,32 @@ public class Operacao {
         this.tipo = tipo;
         this.valor = valor;
         data = new Date();
+
+        Operacao.TOTAL_OPERACOES++;
     }
 
+    public void imprimir(){
+        System.out.println(this.data + "\t" + this.tipo + "\t" + this.valor);
+    };
+
+    public Date getData() {
+        return this.data;
+    }
+
+    public char getTipo() {
+        return this.tipo;
+    }
+
+    public void setTipo(char tipo){
+        if (tipo == 'd' || tipo == 's')
+            this.tipo = tipo;
+    }
+
+    public double getValor(){
+        return this.valor;
+    }
+
+    public void setValor(double valor){
+        this.valor = valor;
+    }
 }

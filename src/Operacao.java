@@ -11,6 +11,12 @@ import java.util.Date;
  */
 public class Operacao {
 
+    /**
+     * @param data
+     * @param tipo
+     * @param valor
+     * @param nOperacao
+     */
     /* Data de realização da operação */
     public Date data;
 
@@ -19,6 +25,42 @@ public class Operacao {
 
     /* Valor da operação */
     public double valor;
+
+    /* Quantidade de operações */
+    private static int nOperacao = 0;
+
+    //Getters
+    public Date getData(){
+        return this.data;
+    }
+
+    public char getTipo(){
+        return this.tipo;
+    }
+
+    public double getValor(){
+        return this.valor;
+    }
+
+    public int getNOperacao(){
+        return nOperacao;
+    }
+    //FIM Getters
+
+    //Setters
+    public void setData(){
+        this.data = new Date();;
+    }
+
+    public void setTipo(char tipo){
+        if (tipo == 'd' || tipo == 's')
+            this.tipo = tipo;
+    }
+
+    public void setValor(double valor){
+        this.valor = valor;
+    }
+    //FIM Setters
 
     /**
      * Construtor. Inicializa uma nova instância da classe Operacao onde a data da operação é exatamente a data
@@ -33,9 +75,19 @@ public class Operacao {
      * @param valor Valor da operação
      */
     public Operacao(char tipo, double valor) {
-        this.tipo = tipo;
-        this.valor = valor;
-        data = new Date();
+        setTipo(tipo);
+        setValor(valor);
+        setData();
+        nOperacao++;
+    }
+
+    public Operacao(){
+        nOperacao = 0;
+    }
+
+    public void extrato(){
+        if (this.data != null)
+            System.out.println("Data: " + this.data + " Operação: " + this.tipo + " Valor: R$ " + this.valor);
     }
 
 }

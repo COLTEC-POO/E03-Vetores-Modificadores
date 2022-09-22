@@ -12,13 +12,53 @@ import java.util.Date;
 public class Operacao {
 
     /* Data de realização da operação */
-    public Date data;
+    private Date data;
 
     /* Tipo da operação */
-    public char tipo;
+    private char tipo;
 
     /* Valor da operação */
-    public double valor;
+    private double valor;
+
+    /* Contator de operacoes */
+
+    public static int contaOperacoes;
+
+    /* Getters and Setters */
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public char getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(char tipo) {
+        if(tipo == 's' || tipo == 'd'){
+            this.tipo = tipo;
+        }
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public static int getContaOperacoes() {
+        return contaOperacoes;
+    }
+
+    public static void setContaOperacoes(int contaOperacoes) {
+        Operacao.contaOperacoes = contaOperacoes;
+    }
 
     /**
      * Construtor. Inicializa uma nova instância da classe Operacao onde a data da operação é exatamente a data
@@ -36,6 +76,7 @@ public class Operacao {
         this.tipo = tipo;
         this.valor = valor;
         data = new Date();
+        contaOperacoes++;
     }
 
 }

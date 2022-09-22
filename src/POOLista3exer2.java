@@ -79,9 +79,9 @@ System.out.println(meucliente.sexo);
 public static void main(String[]args){
 
 public class Conta{
-    private String NomeTitular;
-    private int NumeroConta;
-    private float SaldoConta;
+     String NomeTitular;
+     int NumeroConta;
+     float SaldoConta;
   
   public static void main(String[]args){
   
@@ -91,7 +91,6 @@ public class Conta{
   extrato.SaldoConta(50000.00);
   
   
-    //  colocar os gets e sets
 
     public void ImprimirExtrato(){
             System.out.println("Nome do titular: " + NomeTitular);

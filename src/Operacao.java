@@ -20,6 +20,8 @@ public class Operacao {
     /* Valor da operação */
     private double valor;
 
+    private static int totalOperacoes = 0;
+
     /**
      * Construtor. Inicializa uma nova instância da classe Operacao onde a data da operação é exatamente a data
      * da criação da classe.
@@ -37,6 +39,8 @@ public class Operacao {
         setTipo(tipo);
         this.valor = valor;
         data = new Date();
+
+        totalOperacoes++;
     }
 
     public Date getDataOp() {
@@ -62,5 +66,10 @@ public class Operacao {
     public void setValor(double valor) {
         this.valor = valor;
     }
+
+    public static int getTotalOperacoes() {
+        return totalOperacoes;
+    }
+
 
 }

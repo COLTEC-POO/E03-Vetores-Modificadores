@@ -1,20 +1,25 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
 
-        Conta clienteDuque = new Conta(
-                1,
-                "222",
-                3500,
-                "Duque",
-                2000
-        );
+        System.out.println("====Sistema Bancário====");
+        // Chama a função regContas para criar as contas com base na entrada do usuário
+        Conta[] contas = Conta.regContas();
 
-        clienteDuque.depositar(200);
-        clienteDuque.sacar(3700);
+        // Utilizando operacoes dentro do array
+        contas[0].depositar(200);
+        contas[0].sacar(2000);
 
-        clienteDuque.dadosBanc();
-        System.out.println();
-        clienteDuque.extrato();
+
+        // Imprima o extrato da conta
+        contas[0].imprimirExtrato();
+
+        // Calcular a média de operações por conta
+        double mediaOperacoesPorConta = (double) Operacao.getTotalOperacoes() / Conta.getNumdeContas();
+        System.out.println("Mdia de operações por conta: " + mediaOperacoesPorConta);
+
     }
 }

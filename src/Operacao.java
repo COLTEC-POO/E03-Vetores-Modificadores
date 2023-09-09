@@ -6,19 +6,23 @@
 
 import java.util.Date;
 
+
 /**
  * Classe responsável por registrar operações de saque e depósitos realizados em contas correntes.
  */
 public class Operacao {
 
     /* Data de realização da operação */
-    public Date data;
+    private Date data;
 
     /* Tipo da operação */
-    public char tipo;
+    private char tipo;
 
     /* Valor da operação */
-    public double valor;
+    private double valor;
+
+    /* Valor total das operações */
+    private static int totalOperacoes = 0;
 
     /**
      * Construtor. Inicializa uma nova instância da classe Operacao onde a data da operação é exatamente a data
@@ -32,10 +36,52 @@ public class Operacao {
      * @param tipo Tipo da operação, podendo ser 'd' ou 's'
      * @param valor Valor da operação
      */
+
     public Operacao(char tipo, double valor) {
         this.tipo = tipo;
         this.valor = valor;
         data = new Date();
+
+        // Conta quantas novas operações já foram feitas
+        totalOperacoes++;
+    }
+
+    // GETTERS e SETTERS
+
+    // DATA
+    public Date getData(){
+        return this.data;
+    }
+
+
+    // TIPO
+    public char getTipo(){
+        return this.tipo;
+    }
+
+    public void setTipo(char tipo){
+
+        if(tipo == 'd' || tipo == 's'){
+            this.tipo = tipo;
+        }
+        else{
+            System.out.println("Erro ao fazer a operacao, digite um valor valido.");
+        }
+    }
+
+    // VALOR
+    public double getValor(){
+        return this.valor;
+    }
+
+    public double setValor(){
+        return this.valor;
+    }
+
+    // TOTAL DE OPERAÇÕES
+
+    public static int getTotalOperacoes() {
+        return totalOperacoes;
     }
 
 }

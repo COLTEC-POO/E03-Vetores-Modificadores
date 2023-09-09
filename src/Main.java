@@ -14,6 +14,7 @@ public class Main {
         clienteDuque.sacar(3700);
 
         clienteDuque.dadosBanc();
+        System.out.println();
         clienteDuque.extrato();
     }
 }

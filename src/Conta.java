@@ -88,10 +88,10 @@ public class Conta {
 
     public void dadosBanc(){
 
-        System.out.println("Nome: "+ nome);
-        System.out.println("Numero da conta: "+ numero);
-        System.out.println("Saldo atual: "+ saldo);
-        System.out.println("Limite: "+ limite);
+        System.out.println("Nome: "+ this.getNome());
+        System.out.println("Numero da conta: "+ this.getNumero());
+        System.out.println("Saldo atual: "+ this.getSaldo());
+        System.out.println("Limite: "+ this.getLimite());
 
     }
 

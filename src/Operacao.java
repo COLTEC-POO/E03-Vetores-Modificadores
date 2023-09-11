@@ -1,41 +1,58 @@
-/**
- * Operacao.java
- *
- * @author João Eduardo Montandon
- */
-
 import java.util.Date;
 
-/**
- * Classe responsável por registrar operações de saque e depósitos realizados em contas correntes.
- */
 public class Operacao {
+    private Date data;          // Data de realização da operação
+    private char tipo;         // Tipo da operação: 'd' para depósito e 's' para saque
+    private double valor;     // Valor da operação
+    private static int totalOperacoes = 0;
 
-    /* Data de realização da operação */
-    public Date data;
-
-    /* Tipo da operação */
-    public char tipo;
-
-    /* Valor da operação */
-    public double valor;
-
-    /**
-     * Construtor. Inicializa uma nova instância da classe Operacao onde a data da operação é exatamente a data
-     * da criação da classe.
-     *
-     * Exemplos de uso:
-     *
-     * > Operacao op1 = new Operacao('d', 2500); // Operação de depósito de 2500 reais
-     * > Operacao op2 = new Operacao('s', 1000); // Operação de saque de 1000 reais
-     *
-     * @param tipo Tipo da operação, podendo ser 'd' ou 's'
-     * @param valor Valor da operação
-     */
     public Operacao(char tipo, double valor) {
+
         this.tipo = tipo;
         this.valor = valor;
         data = new Date();
+        totalOperacoes++;
     }
 
+    // Getters da Classe Operacao
+    public Date getData() {
+        return data;
+    }
+
+    public char getTipo() {
+        return tipo;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public static int getTotalOperacoes() {
+        return totalOperacoes;
+    }
+    // FIM Getters
+
+    // Setters
+    private void setData(Date data) {
+        this.data = data;
+    }
+
+    public void setTipo(char tipo) {
+        if (tipo == 'd' || tipo == 's') {
+            this.tipo = tipo;
+        }
+        else{
+            System.out.println("Erro!");
+        }
+    }
+
+    public double setValor() {
+        return  this.valor;
+    }
+
+    // FIM Setters
+
+    public void exibirOperacao() {
+        System.out.println(this.data + "  \t " + this.tipo + "  \t " + this.valor);
+    }
 }
